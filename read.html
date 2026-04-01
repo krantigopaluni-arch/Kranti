@@ -59,6 +59,7 @@
 
             <br><br>
 
+            <!-- OPEN CHAPTER 1 PDF -->
             <button class="read-btn" onclick="window.open('chapter 1 doc.pdf', '_blank')">Open</button>
         </div>
 
@@ -69,13 +70,62 @@
             <p>
                 Like a seed that fights its way through the soil to reach the light, years of quiet effort have broken the surface in the form of Dashanan: Ādi. In this novel, the author reimagines Dashanan—one of India’s most complex figures: a peerless scholar, a master of the scriptures, and an uncompromising devotee of Mahadev.
             </p>
+
+            <p>
                 The story opens with the echo of “Jai Sri Ram,” a child’s innocent questions, and a grandfather’s startling tale of Dashanan’s revival. From that moment, the familiar outline of the Ramayana begins to shift.
+            </p>
+
             <p>
                 While rooted in the timeless world of Indian itihasa, Dashanan: Ādi is, at its core, a work of science fiction. It fuses myth and molecular science, destiny and design, to explore a question that echoes beneath the epics: What if Dashanan’s story did not end on the battlefield of Lanka—and what if the seeds of his return were sown deep within the very fabric of time?
             </p>
         </div>
 
     </div>
+
+    <!-- POPUP FOR UNLOCKING CHAPTER 2 -->
+    <div id="unlockPopup" style="
+        display:none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        z-index: 3000;
+        width: 260px;
+    ">
+        <h3>🔒 Unlock Chapter 2</h3>
+        <p>Rent or buy the book to continue reading.</p>
+        <button onclick="closeUnlockPopup()" style="
+            background:#0a4cff;
+            color:white;
+            border:none;
+            padding:10px 15px;
+            border-radius:6px;
+            cursor:pointer;
+            width:100%;
+            font-weight:600;
+        ">Okay</button>
+    </div>
+
+    <!-- SCROLL DETECTION SCRIPT -->
+    <script>
+        let popupShown = false;
+
+        window.addEventListener("scroll", function() {
+            if (!popupShown) {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                    document.getElementById("unlockPopup").style.display = "block";
+                    popupShown = true;
+                }
+            }
+        });
+
+        function closeUnlockPopup() {
+            document.getElementById("unlockPopup").style.display = "none";
+        }
+    </script>
 
     <script src="script.js"></script>
 
