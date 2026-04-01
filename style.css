@@ -33,20 +33,19 @@
 /* NEW NAVIGATION + BUTTONS  */
 /* ------------------------- */
 
-/* Grey Navigation Bar */
+/* Medium Grey Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #b0b0b0; /* Grey bar */
+    background: #555555; /* Medium grey */
     padding: 10px 20px;
     color: white;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-
-      flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 
 .nav-left button,
