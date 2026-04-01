@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { display: flex; align-items: center; padding: 20px; }
+        .navbar { background-color: #333; padding: 10px; color: white; } 
+        .author { display: flex; align-items: center; margin-top: 20px; }
+        .author img { width: 100px; height: 100px; border-radius: 50%; margin-right: 20px; }
+        .description { max-width: 600px; }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-        <div class="dropdown">
-            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-            <div class="dropdown-content">
-                <a href="#">Profile</a>
-                <a href="#">Sign Out</a>
+    <div class="navbar">
+        <h1>My Website</h1>
+    </div>
+    <div class="container">
+        <div class="author">
+            <img src="author_picture.jpg" alt="Author Picture">
+            <div class="description">
+                <h2>Author Name</h2>
+                <p>This is a brief description of the author, highlighting their work and interests.</p>
             </div>
         </div>
-    </nav>
-    <h1>Kranti Gopaluni</h1>
-    <p>Born in Kurnool, India and now based in Boston, USA, ‘Kranti’ Gopaluni works as a scientist in the biotech industry. His professional life is rooted in data, experiments, and detail, but his imagination has long been shaped by the stories and figures of Indian Itihasa.
-
-Dashanan: Ādi is his first novel, conceived as a tribute to Dashanan and to the fierce devotion of the Shiva Tandava Stotram. In it, he weaves together a modern scientific lens with ancient epic tradition. Outside of work and writing, Kranti enjoys hiking and camping, drawing inspiration from time spent in nature.</p>
+    </div>
 </body>
 </html>
