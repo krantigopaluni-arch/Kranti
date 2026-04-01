@@ -45,6 +45,13 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+
+      flex-wrap: nowrap;
+}
+
+.nav-left button,
+.nav-right button {
+    padding: 8px 12px; /* slightly smaller buttons */
 }
 
 .nav-left {
