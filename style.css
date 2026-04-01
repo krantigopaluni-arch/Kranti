@@ -33,12 +33,12 @@
 /* NEW NAVIGATION + BUTTONS  */
 /* ------------------------- */
 
-/* Blue Navigation Bar */
+/* Grey Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0a4cff; /* Blue bar */
+    background: #b0b0b0; /* Grey bar */
     padding: 10px 20px;
     color: white;
     position: fixed;
