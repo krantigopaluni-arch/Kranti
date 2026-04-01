@@ -1,150 +1,55 @@
-// Open/Close Login Modal
-function openLoginModal() {
-    document.getElementById("loginModal").style.display = "block";
+// Open modal by ID
+function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "block";
+    }
 }
 
-function closeLoginModal() {
-    document.getElementById("loginModal").style.display = "none";
+// Close modal by ID
+function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "none";
+    }
 }
 
-// Open/Close Signup Modal
-function openSignupModal() {
-    document.getElementById("signupModal").style.display = "block";
-}
-
-function closeSignupModal() {
-    document.getElementById("signupModal").style.display = "none";
-}
-
-// Close modal when clicking outside
+// Close modal when clicking outside the modal content
 window.onclick = function(event) {
-    let loginModal = document.getElementById("loginModal");
-    let signupModal = document.getElementById("signupModal");
-    
-    if (event.target == loginModal) {
-        loginModal.style.display = "none";
-    }
-    if (event.target == signupModal) {
-        signupModal.style.display = "none";
-    }
-}
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
 
-// Validate Email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+// Optional: Basic form validation (can be expanded later)
+document.addEventListener("DOMContentLoaded", () => {
+    const signupForm = document.querySelector("#signupModal form");
+    const signinForm = document.querySelector("#signinModal form");
 
-// Login Function
-function login() {
-    let email = document.getElementById("loginEmail").value;
-    let password = document.getElementById("loginPassword").value;
-    
-    if (email === "" || password === "") {
-        alert("Please fill in all fields");
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        alert("Please enter a valid email");
-        return;
-    }
-    
-    if (password.length < 6) {
-        alert("Password must be at least 6 characters");
-        return;
-    }
-    
-    // Store user data
-    localStorage.setItem("userEmail", email);
-    localStorage.setItem("userName", email.split("@")[0]);
-    localStorage.setItem("isLoggedIn", "true");
-    
-    alert("Logged in successfully!");
-    closeLoginModal();
-    updateNavbar();
-}
+    if (signupForm) {
+        signupForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const password = signupForm.querySelector("input[type='password']").value;
+            const confirmPassword = signupForm.querySelectorAll("input[type='password']")[1].value;
 
-// Signup Function
-function signup() {
-    let name = document.getElementById("signupName").value;
-    let email = document.getElementById("signupEmail").value;
-    let password = document.getElementById("signupPassword").value;
-    let confirmPassword = document.getElementById("signupConfirmPassword").value;
-    
-    if (name === "" || email === "" || password === "" || confirmPassword === "") {
-        alert("Please fill in all fields");
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        alert("Please enter a valid email");
-        return;
-    }
-    
-    if (password.length < 6) {
-        alert("Password must be at least 6 characters");
-        return;
-    }
-    
-    if (password !== confirmPassword) {
-        alert("Passwords do not match");
-        return;
-    }
-    
-    // Store user data
-    localStorage.setItem("userEmail", email);
-    localStorage.setItem("userName", name);
-    localStorage.setItem("isLoggedIn", "true");
-    
-    alert("Account created successfully!");
-    closeSignupModal();
-    updateNavbar();
-}
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
 
-// Logout Function
-function logout() {
-    localStorage.removeItem("userEmail");
-    localStorage.removeItem("userName");
-    localStorage.removeItem("isLoggedIn");
-    
-    alert("Logged out successfully!");
-    updateNavbar();
-}
-
-// Update Navbar based on login status
-function updateNavbar() {
-    let isLoggedIn = localStorage.getItem("isLoggedIn");
-    let navbarRight = document.querySelector(".navbar-right");
-    
-    if (isLoggedIn === "true") {
-        let userName = localStorage.getItem("userName");
-        navbarRight.innerHTML = `
-            <span style=\"color: white; padding: 14px 16px;\">Welcome, ${userName}!</span>
-            <button onclick=\"logout()\" style=\"background-color: #e74c3c; color: white; padding: 14px 16px; border: none; cursor: pointer; border-radius: 4px;\">Logout</button>
-        `;
-    } else {
-        navbarRight.innerHTML = `
-            <button onclick=\"openLoginModal()\" class=\"btn-login\">Sign In</button>
-            <button onclick=\"openSignupModal()\" class=\"btn-signup\">Sign Up</button>
-        `;
+            alert("Account created successfully!");
+            closeModal("signupModal");
+        });
     }
-}
 
-// Open Book
-function openBook() {
-    let isLoggedIn = localStorage.getItem("isLoggedIn");
-    
-    if (isLoggedIn !== "true") {
-        alert("Please sign in or sign up to access the book!");
-        openLoginModal();
-    } else {
-        alert("Opening book for " + localStorage.getItem("userName"));
-        window.location.href = "book.html";
+    if (signinForm) {
+        signinForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Signed in successfully!");
+            closeModal("signinModal");
+        });
     }
-}
-
-// Initialize page
-window.onload = function() {
-    updateNavbar();
-}
+});
