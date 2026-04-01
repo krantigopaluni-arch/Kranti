@@ -5,11 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read – Chapter 1</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .locked-section {
+            filter: blur(6px);
+            pointer-events: none;
+            user-select: none;
+            opacity: 0.6;
+        }
+        .locked-overlay {
+            margin-top: -150px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR (same as other pages) -->
+    <!-- NAVIGATION BAR -->
     <nav class="navbar">
         <div class="nav-left">
             <button class="side-btn" onclick="location.href='index.html'">Home</button>
@@ -22,40 +40,34 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <div style="margin-top:120px; padding: 20px; max-width: 800px;">
 
         <h1>Chapter 1</h1>
 
         <p>
-            <!-- Your actual Chapter 1 text goes here -->
-            This is where you paste the content of Chapter 1.  
-            You can format it with paragraphs, headings, quotes, etc.
+            <!-- Paste ONLY Chapter 1 text here -->
+            This is where you paste the content of Chapter 1 from your PDF.
         </p>
 
         <hr style="margin: 40px 0;">
 
-        <h1 style="opacity: 0.4;">Chapter 2 (Locked)</h1>
+        <h1>Chapter 2</h1>
 
-        <div style="
-            padding: 20px;
-            background: #f0f0f0;
-            border-left: 5px solid #ff0000;
-            border-radius: 6px;
-            max-width: 600px;
-        ">
-            <h3 style="margin-top: 0;">🔒 Locked</h3>
+        <!-- BLURRED CONTENT -->
+        <div class="locked-section">
             <p>
-                Finish payment to read further chapters.
+                <!-- You can paste Chapter 2 text here, it will be blurred -->
+                This content is locked until payment is completed.
             </p>
-            <button class="auth-btn" onclick="alert('Payment system coming soon!')">
-                Complete Payment
-            </button>
+        </div>
+
+        <!-- OVERLAY MESSAGE -->
+        <div class="locked-overlay">
+            <h3>🔒 Locked</h3>
+            <p>Make payment to continue reading</p>
         </div>
 
     </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
