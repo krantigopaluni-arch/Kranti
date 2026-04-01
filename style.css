@@ -9,50 +9,44 @@ h1 {
     color: darkblue;
 }
 
-/* NAVBAR STYLING */
 .navbar {
     width: 100%;
-    background-color: #e0e0e0; /* light grey bar */
+    background-color: #e0e0e0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 12px 30px;
     box-sizing: border-box;
 }
 
-/* Left side links */
+/* LEFT SIDE */
+.nav-left {
+    display: flex;
+    gap: 20px;
+}
+
 .nav-left a {
-    margin-right: 20px;
     text-decoration: none;
-    color: #333;
+    color: #000;
     font-weight: bold;
 }
 
-/* Right side button */
+/* RIGHT SIDE */
+.nav-right {
+    margin-left: auto;
+}
+
 .nav-right .btn {
     text-decoration: none;
-    background-color: #555;
+    background-color: #333;
     color: white;
-    padding: 8px 15px;
+    padding: 8px 16px;
     border-radius: 5px;
 }
 
-/* Hover effects */
-.nav-left a:hover {
-    color: black;
-}
-
-.nav-right .btn:hover {
-    background-color: #333;
-}
-
-/* EXISTING STYLES */
+/* REMOVE THIS (important!) */
 nav a {
-    margin: 10px;
-    text-decoration: none;
-    color: white;
-    background: blue;
-    padding: 8px;
+    all: unset;
 }
 
 .book-container {
