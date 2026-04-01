@@ -1,0 +1,28 @@
+body {
+    font-family: Arial;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1 {
+    color: darkblue;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background: blue;
+    padding: 8px;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.locked {
+    color: red;
+    font-weight: bold;
+}

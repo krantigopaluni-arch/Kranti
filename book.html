@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Book Details</h1>
+
+<div class="book-container">
+    <img src="book.jpg" width="200">
+
+    <div>
+        <h2>Book Title</h2>
+        <p>This is a short description of your book.</p>
+
+        <button onclick="readBook()">Read Book</button>
+    </div>
+</div>
+
+<!-- Reading Section -->
+<div id="readingSection" style="display:none;">
+    <h3>Chapter 1</h3>
+    <p>This is the first chapter content...</p>
+
+    <h3>Chapter 2</h3>
+    <p class="locked">Pay additional amount to read the entire book</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
