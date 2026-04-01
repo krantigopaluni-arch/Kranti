@@ -33,11 +33,12 @@
 /* NEW NAVIGATION + BUTTONS  */
 /* ------------------------- */
 
+/* Blue Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1a1a1a;
+    background: #0a4cff; /* Blue bar */
     padding: 10px 20px;
     color: white;
     position: fixed;
@@ -56,36 +57,39 @@
     align-items: center;
 }
 
-/* Left-side buttons */
+/* Light Green Home / About Author Buttons */
 .side-btn {
-    background: #333;
-    color: white;
+    background: #7CFC00; /* Light green */
+    color: #000;
     border: none;
     padding: 10px 15px;
     margin-right: 10px;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
     transition: 0.3s;
 }
 
 .side-btn:hover {
-    background: #555;
+    background: #6ee000; /* Slightly darker green */
 }
 
-/* Sign In / Sign Up buttons */
+/* White Sign In / Sign Up Buttons */
 .auth-btn {
-    background: #ff9800;
-    color: white;
-    border: none;
+    background: #ffffff;
+    color: #0a4cff;
+    border: 2px solid #ffffff;
     padding: 10px 15px;
     margin-left: 10px;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
     transition: 0.3s;
 }
 
 .auth-btn:hover {
-    background: #e68900;
+    background: #dce6ff;
+    border-color: #dce6ff;
 }
 
 /* ------------------------- */
