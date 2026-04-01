@@ -3,30 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { display: flex; align-items: center; padding: 20px; }
-        .navbar { background-color: #333; padding: 10px; color: white; } 
-        .author { display: flex; align-items: center; margin-top: 20px; }
-        .author img { width: 100px; height: 100px; border-radius: 50%; margin-right: 20px; }
-        .description { max-width: 600px; }
-    </style>
+    <title>About Author</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="navbar">
-        <h1>My Website</h1>
-    </div>
-    <div class="container">
-        <div class="author">
-            <img src="author_picture.jpg" alt="Author Picture">
-            <div class="description">
-                <h2>Sai Akash Gopaluni/h2>
-                <p>Born in Kurnool, India and now based in Boston, USA, ‘Kranti’ Gopaluni works as a scientist in the biotech industry. His professional life is rooted in data, experiments, and detail, but his imagination has long been shaped by the stories and figures of Indian Itihasa.
 
-Dashanan: Ādi is his first novel, conceived as a tribute to Dashanan and to the fierce devotion of the Shiva Tandava Stotram. In it, he weaves together a modern scientific lens with ancient epic tradition. Outside of work and writing, Kranti enjoys hiking and camping, drawing inspiration from time spent in nature.</p>
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="side-btn" onclick="location.href='index.html'">Home</button>
+            <button class="side-btn" onclick="location.href='about.html'">About Author</button>
+        </div>
+
+        <div class="nav-right">
+            <button class="auth-btn" onclick="openModal('signinModal')">Sign In</button>
+            <button class="auth-btn" onclick="openModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- SIGN IN MODAL -->
+    <div id="signinModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signinModal')">&times;</span>
+            <h2>Sign In</h2>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SIGN UP MODAL -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ABOUT CONTENT -->
+    <div style="margin-top:120px; padding: 20px;">
+        <div class="author-section">
+            <img src="author_picture.jpg" alt="Author Picture">
+
+            <div class="author-description">
+                <h2>Sai Akash Gopaluni</h2>
+
+                <p>
+                    Born in Kurnool, India and now based in Boston, USA, ‘Kranti’ Gopaluni works as a scientist in the biotech industry. 
+                    His professional life is rooted in data, experiments, and detail, but his imagination has long been shaped by the stories 
+                    and figures of Indian Itihasa.
+                </p>
+
+                <p>
+                    <em>Dashanan: Ādi</em> is his first novel, conceived as a tribute to Dashanan and to the fierce devotion of the Shiva 
+                    Tandava Stotram. In it, he weaves together a modern scientific lens with ancient epic tradition. Outside of work and 
+                    writing, Kranti enjoys hiking and camping, drawing inspiration from time spent in nature.
+                </p>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
