@@ -1,44 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kranti</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" onclick="document.getElementById('loginModal').style.display='block'">Login</a></li>
+            <li><a href="#" onclick="document.getElementById('signupModal').style.display='block'">Sign Up</a></li>
+        </ul>
+    </nav>
 
-      <!-- NAVBAR START -->
-  <div class="navbar">
-    <div class="nav-left">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Author</a>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
-    <div class="nav-right">
-      <a href="#" class="btn">Sign Up / Login</a>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('signupModal').style.display='none'">&times;</span>
+            <h2>Sign Up</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
     </div>
-  </div>
-  <!-- NAVBAR END -->
 
-<h1>Welcome to Kranti</h1>
-
-<!-- Navigation -->
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About the Author</a>
-</nav>
-
-<!-- Registration -->
-<div>
-    <h2>Register</h2>
-    <input type="text" id="username" placeholder="Enter your name">
-    <button onclick="registerUser()">Register</button>
-</div>
-
-<!-- Book Section -->
-<div>
-    <h2>Available Book</h2>
-    <img src="book.jpg" id="bookImage" onclick="openBook()" width="200">
-</div>
-
-<script src="script.js"></script>
+    <script>
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
