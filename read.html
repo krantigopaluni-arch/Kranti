@@ -82,6 +82,9 @@
 
     </div>
 
+    <!-- INVISIBLE SPACER TO FORCE SCROLL -->
+    <div style="height: 400px;"></div>
+
     <!-- POPUP FOR UNLOCKING CHAPTER 2 -->
     <div id="unlockPopup" style="
         display:none;
@@ -114,20 +117,5 @@
         let popupShown = false;
 
         window.addEventListener("scroll", function() {
-            if (!popupShown) {
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-                    document.getElementById("unlockPopup").style.display = "block";
-                    popupShown = true;
-                }
-            }
-        });
-
-        function closeUnlockPopup() {
-            document.getElementById("unlockPopup").style.display = "none";
-        }
-    </script>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+            const scrollPosition = window.innerHeight + window.scrollY;
+            const pageHeight = document
