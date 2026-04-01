@@ -63,11 +63,11 @@
     align-items: center;
 }
 
-/* Light Green Home / About Author Buttons */
+/* White Home / About Author Buttons */
 .side-btn {
-    background: #7CFC00; /* Light green */
-    color: #000;
-    border: none;
+    background: #ffffff;        /* White background */
+    color: #0a4cff;             /* Same blue text as Sign In/Up */
+    border: 2px solid #ffffff;  /* White border */
     padding: 10px 15px;
     margin-right: 10px;
     border-radius: 6px;
@@ -77,7 +77,8 @@
 }
 
 .side-btn:hover {
-    background: #6ee000; /* Slightly darker green */
+    background: #dce6ff;        /* Light blue hover */
+    border-color: #dce6ff;
 }
 
 /* White Sign In / Sign Up Buttons */
