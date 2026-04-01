@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read – Chapter 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR (same as other pages) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="side-btn" onclick="location.href='index.html'">Home</button>
+            <button class="side-btn" onclick="location.href='about.html'">About Author</button>
+        </div>
+
+        <div class="nav-right">
+            <button class="auth-btn" onclick="openModal('signinModal')">Sign In</button>
+            <button class="auth-btn" onclick="openModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div style="margin-top:120px; padding: 20px; max-width: 800px;">
+
+        <h1>Chapter 1</h1>
+
+        <p>
+            <!-- Your actual Chapter 1 text goes here -->
+            This is where you paste the content of Chapter 1.  
+            You can format it with paragraphs, headings, quotes, etc.
+        </p>
+
+        <hr style="margin: 40px 0;">
+
+        <h1 style="opacity: 0.4;">Chapter 2 (Locked)</h1>
+
+        <div style="
+            padding: 20px;
+            background: #f0f0f0;
+            border-left: 5px solid #ff0000;
+            border-radius: 6px;
+            max-width: 600px;
+        ">
+            <h3 style="margin-top: 0;">🔒 Locked</h3>
+            <p>
+                Finish payment to read further chapters.
+            </p>
+            <button class="auth-btn" onclick="alert('Payment system coming soon!')">
+                Complete Payment
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
